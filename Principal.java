@@ -1,0 +1,44 @@
+
+import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author goquezadag
+ */
+public class Principal {
+    public static void main(String[] args) {
+         String menu = " 1--> Rectangulo\n"
+                    + " 2--> Circula\n"
+                    + " 3--> Triangulo\n"
+                    + " 4--> Salir";
+        int opcion = Integer.parseInt(JOptionPane.showInputDialog(null,menu));
+        switch (opcion){
+            case 1: 
+                double base=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese la base"));
+                double altura=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese la altura"));
+                Rectangulo rec=new Rectangulo(base, altura);
+                JOptionPane.showMessageDialog(null, "Rectangulo:\n Area: "+rec.area()+"\nPerimetro: "+rec.perimetro(),"Figuras Geometricas",JOptionPane.QUESTION_MESSAGE);
+                break;
+            case 2:
+                 double radio=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese radio del circulo"));
+                 Circulo rad=new Circulo(radio);
+                 JOptionPane.showMessageDialog(null, "Circulo:\n Area: "+rad.area()+"\nPerimetro: "+rad.perimetro(),"Figuras Geometricas",JOptionPane.QUESTION_MESSAGE);
+                break;
+            case 3:
+                double bas=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese la base"));
+                double altur=Double.parseDouble(JOptionPane.showInputDialog(null,"Ingrese la altura"));
+                Triangulo tri=new Triangulo(bas, altur);
+                JOptionPane.showMessageDialog(null, "Triangulo:\n Area: "+tri.area()+"\nPerimetro: "+tri.perimetro(),"Figuras Geometricas",JOptionPane.QUESTION_MESSAGE);
+                break;
+            case  4:
+                System.exit(0);
+                    break;
+        }
+    }
+}
